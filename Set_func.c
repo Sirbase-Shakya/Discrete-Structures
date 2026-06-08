@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <conio.h>
-int set_Union[] = {0}, set_Intersection[] = {0}, set_difference_A[] = {0}, set_difference_B[] = {0};
+#define Max_size 100
+int set_Union[Max_size], set_Intersection[Max_size], set_difference_A[Max_size], set_difference_B[Max_size];
 int isPresent(int element, int arr[], int size)
 {
     for (int i = 0; i < size; i++)
@@ -161,7 +161,7 @@ void main()
         case 5:
         {
             printf("The Cartesian Product of the sets is:\n { ");
-            int max = Cartesian(set_A, set_B, size_A, size_B);
+            Cartesian(set_A, set_B, size_A, size_B);
             break;
         }
         case 6:
@@ -182,6 +182,6 @@ void main()
         }
         }
         printf("\nDo u want to perform another operation? (y/n)");
-        check = getch();
+        scanf(" %c", &check);
     } while (check != 'n');
 }
